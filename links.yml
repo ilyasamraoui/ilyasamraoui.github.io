@@ -1,0 +1,15 @@
+ links:
+  - url: https://www.google.com
+    name: Google
+  - url: https://www.github.com
+    name: Github
+  - url: https://www.stackoverflow.com
+    name: Stackoverflow
+  - url: https://www.Gitlab.com
+    name: Gitlab
+  - url: https://www.medium.com
+    name: Medium
+  - url: https://www.quora.com
+    name: Quora
+  - url: https://www.atlassian.com
+    name: Atlassian

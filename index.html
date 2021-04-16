@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Links Repository</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+        <a class="navbar-brand" href="#">
+            <i id="logo" class="fa fa-link"></i>
+            <span id="logo-text">Link Repo</span>
+        </a>
+    </nav>
+</header>
+<div class="container">
+
+    <!-- Filter Start -->
+    <div class="p-3 bg-white rounded">
+        <div class="input-group input-group-lg">
+            <input type="text" id="filter" class="form-control form-control-alt" placeholder="Filter..." autofocus>
+            <div class="input-group-append">
+                    <span class="input-group-text border-0">
+                        <i class="fa fa-filter"></i>
+                    </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results -->
+    <div id="links" class="list-group">
+    </div>
+</div>
+<script src="js/script.js"></script>
+<script src="js/js-yaml.min.js"></script>
+</body>
+</html>
