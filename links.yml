@@ -1,11 +1,13 @@
- links:
+links:
   - url: https://www.google.com
     name: Google
     image: https://w7.pngwing.com/pngs/249/19/png-transparent-google-logo-g-suite-google-guava-google-plus-company-text-logo.png
   - url: https://www.github.com
     name: Github
+    image:
   - url: https://www.stackoverflow.com
     name: Stackoverflow
+    image:
   - url: https://www.Gitlab.com
     name: Gitlab
     image: https://about.gitlab.com/images/press/logo/png/gitlab-logo-gray-stacked-rgb.png
@@ -17,3 +19,4 @@
     image: https://upload.wikimedia.org/wikipedia/commons/0/09/Quora_icon.svg
   - url: https://www.atlassian.com
     name: Atlassian
+    image:
