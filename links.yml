@@ -1,16 +1,16 @@
 links:
   - url: https://www.google.com
     name: Google
-    image: https://w7.pngwing.com/pngs/249/19/png-transparent-google-logo-g-suite-google-guava-google-plus-company-text-logo.png
+    image: http://assets.stickpng.com/thumbs/5847f9cbcef1014c0b5e48c8.png
   - url: https://www.github.com
     name: Github
     image:
   - url: https://www.stackoverflow.com
-    name: Stackoverflow
+    name: StackOverflow
     image:
   - url: https://www.Gitlab.com
     name: Gitlab
-    image: https://about.gitlab.com/images/press/logo/png/gitlab-logo-gray-stacked-rgb.png
+    image: https://about.gitlab.com/images/press/logo/png/gitlab-icon-rgb.png
   - url: https://www.medium.com
     name: Medium
     image: https://uxwing.com/wp-content/themes/uxwing/download/10-brands-and-social-media/medium.png

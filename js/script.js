@@ -7,8 +7,7 @@ class Model {
 class View {
     constructor() {
         this.filter = this.getElement('#filter')
-        this.links = this.getElement('#links-result')
-        console.log(this.links)
+        this.linksResult = this.getElement('#links-result')
     }
 
     getElement(selector) {
@@ -30,15 +29,15 @@ class View {
     }
 
     displayLinks(links) {
-        while (this.links.firstChild) {
-            this.links.removeChild(this.links.firstChild)
+        while (this.linksResult.firstChild) {
+            this.linksResult.removeChild(this.linksResult.firstChild)
         }
         if (links.length === 0) {
             const div = this.createElement('div', "alert", "alert-warning")
             const h5 = this.createElement("h6")
             h5.textContent = 'No Results Found!'
             div.append(h5)
-            this.links.append(div)
+            this.linksResult.append(div)
         } else {
             links.forEach(link => {
                 const a = this.createElement("a",
@@ -46,12 +45,14 @@ class View {
                 a.href = link.url
                 a.target = "_blank"
                 const linkContainer = this.createElement("div", "link-container")
-                const linkLogo = this.createElement("img", "link-logo")
-                if (link.image) {
-                    linkLogo.src = link.image
+                const linkImage = this.createElement("img", "link-logo")
+                linkImage.src = link.image
+                linkImage.onerror = function () {
+                    this.onerror = null;
+                    this.src = 'https://www.blemishcarecosmetics.com/wp-content/uploads/2021/04/no-image-icon-0.jpg';
                 }
                 const linkLogoContainer = this.createElement("div", "link-logo-container")
-                linkLogoContainer.append(linkLogo)
+                linkLogoContainer.append(linkImage)
                 linkContainer.append(linkLogoContainer)
                 const nameContainer = this.createElement("div", "d-flex", "w-100", "justify-content-between")
                 const linkNameH5 = this.createElement("h5", "text-primary", "h5", "mb-1")
@@ -64,7 +65,7 @@ class View {
                 textContainer.append(urlContainer)
                 linkContainer.append(textContainer)
                 a.append(linkContainer)
-                this.links.append(a)
+                this.linksResult.append(a)
             })
         }
     }
@@ -78,8 +79,8 @@ class Controller {
     }
 
     init = async function () {
-        const url = "https://raw.githubusercontent.com/ilyasamraoui/ilyasamraoui.github.io/main/links.yml"
-        this.model.links = await this.fetchLinks(url)
+        const linksUrl = "https://raw.githubusercontent.com/ilyasamraoui/ilyasamraoui.github.io/main/links.yml"
+        this.model.links = await this.fetchLinks(linksUrl)
         this.view.displayLinks(this.model.links)
         this.view.bindFilterInputChange(this.handleFilterInputChange)
     }
