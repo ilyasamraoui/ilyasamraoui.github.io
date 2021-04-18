@@ -27,11 +27,6 @@ body {
     margin-top: 20px;
 }
 
-#links {
-    margin-top: 20px;
-    margin-bottom: 40px;
-}
-
 .form-control-alt {
     border-color: #f0f3f8;
     background-color: #f0f3f8;
@@ -42,3 +37,31 @@ body {
     background-color: #e4e9f3;
     box-shadow: none;
 }
+
+#links-result {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.link-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.link-logo-container {
+    width: 60px;
+    margin-right: 15px;
+}
+
+.link-logo {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+

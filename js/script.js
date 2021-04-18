@@ -7,7 +7,8 @@ class Model {
 class View {
     constructor() {
         this.filter = this.getElement('#filter')
-        this.links = this.getElement('#links')
+        this.links = this.getElement('#links-result')
+        console.log(this.links)
     }
 
     getElement(selector) {
@@ -44,14 +45,25 @@ class View {
                     "list-group-item", "list-group-item-action", "flex-column", "align-items-start")
                 a.href = link.url
                 a.target = "_blank"
-                const nameDiv = this.createElement("div", "d-flex", "w-100", "justify-content-between")
-                const h5 = this.createElement("h5", "text-primary", "h5", "mb-1")
-                h5.textContent = link.name
-                nameDiv.append(h5)
-                a.append(nameDiv)
-                const urlDiv = this.createElement("div", "font-size-sm", "text-success", "mb-1")
-                urlDiv.textContent = link.url
-                a.append(urlDiv)
+                const linkContainer = this.createElement("div", "link-container")
+                const linkLogo = this.createElement("img", "link-logo")
+                if (link.image) {
+                    linkLogo.src = link.image
+                }
+                const linkLogoContainer = this.createElement("div", "link-logo-container")
+                linkLogoContainer.append(linkLogo)
+                linkContainer.append(linkLogoContainer)
+                const nameContainer = this.createElement("div", "d-flex", "w-100", "justify-content-between")
+                const linkNameH5 = this.createElement("h5", "text-primary", "h5", "mb-1")
+                linkNameH5.textContent = link.name
+                nameContainer.append(linkNameH5)
+                const urlContainer = this.createElement("div", "font-size-sm", "text-success", "mb-1")
+                urlContainer.textContent = link.url
+                const textContainer = this.createElement("div")
+                textContainer.append(nameContainer)
+                textContainer.append(urlContainer)
+                linkContainer.append(textContainer)
+                a.append(linkContainer)
                 this.links.append(a)
             })
         }
