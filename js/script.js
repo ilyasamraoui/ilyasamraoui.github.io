@@ -40,16 +40,17 @@ class View {
             this.linksResult.append(div)
         } else {
             links.forEach(link => {
+                const defaultImageLink = "https://www.blemishcarecosmetics.com/wp-content/uploads/2021/04/no-image-icon-0.jpg"
                 const a = this.createElement("a",
                     "list-group-item", "list-group-item-action", "flex-column", "align-items-start")
                 a.href = link.url
                 a.target = "_blank"
                 const linkContainer = this.createElement("div", "link-container")
                 const linkImage = this.createElement("img", "link-logo")
-                linkImage.src = link.image
+                linkImage.src = link.image ? link.image : defaultImageLink
                 linkImage.onerror = function () {
                     this.onerror = null;
-                    this.src = 'https://www.blemishcarecosmetics.com/wp-content/uploads/2021/04/no-image-icon-0.jpg';
+                    this.src = defaultImageLink;
                 }
                 const linkLogoContainer = this.createElement("div", "link-logo-container")
                 linkLogoContainer.append(linkImage)
